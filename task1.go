@@ -1,16 +1,23 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 )
 
 func main() {
-	var a, b, result int16
+	in := bufio.NewReader(os.Stdin)
+	out := bufio.NewWriter(os.Stdout)
+	defer out.Flush()
+
 	var n_test, i uint16
-	fmt.Scan(&n_test)
+	fmt.Fscan(in, &n_test)
+
 	for i = 0; i < n_test; i++ {
-		fmt.Scan(&a, &b)
+		var a, b, result int16
+		fmt.Fscan(in, &a, &b)
 		result = a + b
-		fmt.Println(result)
+		fmt.Fprintln(out, result)
 	}
 }
