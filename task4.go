@@ -15,14 +15,13 @@ func main() {
 	defer out.Flush()
 
 	var nTest, i, nTask, taskNum, n int
-	flag := true
 
 	fmt.Fscan(in, &nTest)
 
 	for n = 0; n < nTest; n++ {
 
 		fmt.Fscan(in, &nTask)
-
+		flag := true
 		task := make([]int, nTask, nTask)
 		taskMax := make([]int, MAXTASK, MAXTASK)
 
