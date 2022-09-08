@@ -14,12 +14,12 @@ func main() {
 	out := bufio.NewWriter(os.Stdout)
 	defer out.Flush()
 
-	var nTest, i, nTask, taskNum int
+	var nTest, i, nTask, taskNum, n int
 	flag := true
 
 	fmt.Fscan(in, &nTest)
 
-	for i = 0; i < nTest; i++ {
+	for n = 0; n < nTest; n++ {
 
 		fmt.Fscan(in, &nTask)
 
@@ -41,7 +41,7 @@ func main() {
 
 		if flag {
 			fmt.Println("YES")
-		} else {
+		} else if !flag {
 			fmt.Println("NO")
 		}
 	}
