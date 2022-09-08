@@ -17,43 +17,40 @@ func main() {
 
 	fmt.Fscan(in, &nInput)
 
-	sortUnit := []int{}
-
 	for j = 0; j < nInput; j++ {
-
 		fmt.Fscan(in, &nUnit)
-
 		allUnit := make([]int, nUnit, nUnit)
 
 		for i = 0; i < nUnit; i++ {
-			var kval int
-			fmt.Fscan(in, &kval)
-
-			allUnit[i] = kval
+			fmt.Fscan(in, &allUnit[i])
 		}
-		var min_deviation, count int
 
-		for j = 0; j < nUnit-1; j++ {
+		var count1 int
 
-			if allUnit[j] > 0 {
-				min_deviation = int(math.Abs(float64(allUnit[j]) - float64(allUnit[j+1])))
+		for i = 0; i < nUnit/2; i++ {
 
-				sortUnit = append(sortUnit, j)
-
-				for i = j + 1; i < nUnit; i++ {
-					if allUnit[i] > 0 && min_deviation > int(math.Abs(float64(allUnit[j])-float64(allUnit[i]))) {
-						min_deviation = int(math.Abs(float64(allUnit[j]) - float64(allUnit[i])))
-						count = i
-						sortUnit = append(sortUnit, count)
-					}
-
-					allUnit[count] = 0
+			count1 = 0
+			for {
+				if allUnit[count1] != 0 {
+					break
 				}
-				allUnit[j] = 0
+				count1++
 			}
-		}
-		fmt.Println(allUnit)
-	}
-	fmt.Println(sortUnit)
 
+			var count2, min_dif, k int
+			min_dif = 100
+
+			for k = count1 + 1; k < nUnit; k++ {
+
+				if allUnit[k] != 0 && (min_dif > int(math.Abs(float64(allUnit[count1])-float64(allUnit[k])))) {
+					count2 = k
+					min_dif = int(math.Abs(float64(allUnit[count1]) - float64(allUnit[k])))
+				}
+			}
+			fmt.Println(count1+1, count2+1)
+			allUnit[count1] = 0
+			allUnit[count2] = 0
+		}
+		fmt.Println()
+	}
 }
