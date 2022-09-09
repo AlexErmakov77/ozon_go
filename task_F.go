@@ -34,21 +34,22 @@ func main() {
 	}
 
 	fmt.Println()
-	fmt.Println("Friends for each user:")
-	for u := 1; u <= users; u++ {
-		fmt.Print(u, ": [ ")
-		for friend, value := range friends[u] {
-			if value {
-				fmt.Print(friend, " ")
-			}
-		}
-		fmt.Println("]")
-	}
+	// fmt.Println("Friends for each user:")
+	// for u := 1; u <= users; u++ {
+	// 	fmt.Print(u, ": [ ")
+	// 	for friend, value := range friends[u] {
+	// 		if value {
+	// 			fmt.Print(friend, " ")
+	// 		}
+	// 	}
+	// 	fmt.Println("]")
+	// }
 
 	fmt.Println()
-	fmt.Println("Answer:")
+	//fmt.Println("Answer:")
 	for ux := 1; ux <= users; ux++ {
-		fmt.Print(ux, ": ")
+		//fmt.Print(ux, ": ")
+		//fmt.Println(ux)
 		res := []int{}
 		maxCount := 0
 		for uy := 1; uy <= users; uy++ {
