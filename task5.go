@@ -21,13 +21,15 @@ func main() {
 	for n = 0; n < nTest; n++ {
 
 		fmt.Fscan(in, &nTask)
-		flag := true
+		// flag := true
+		var flag bool
 		var h1, m1, s1, h2, m2, s2, t1, t2 int
 		sec := make([]int, MAXSEC, MAXSEC)
 
 		for i = 0; i < nTask; i++ {
-			in1 := bufio.NewReader(os.Stdin)
 
+			in1 := bufio.NewReader(os.Stdin)
+			flag = true
 			fmt.Fscanf(in1, "%d:%d:%d-%d:%d:%d", &h1, &m1, &s1, &h2, &m2, &s2)
 
 			if checkTime(h1, m1, s1) == false || checkTime(h1, m1, s1) == false {
