@@ -33,8 +33,8 @@ func main() {
 			if checkTime(h1, m1, s1) == false || checkTime(h1, m1, s1) == false {
 				flag = false
 			} else {
-				t1 = 3600*h1 + 60*m1 + 60*s1
-				t2 = 3600*h2 + 60*m2 + 60*s2
+				t1 = 3600*h1 + 60*m1 + s1
+				t2 = 3600*h2 + 60*m2 + s2
 
 				if t1 > t2 {
 					flag = false
