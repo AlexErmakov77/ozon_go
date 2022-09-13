@@ -1,31 +1,20 @@
 #include <stdio.h>
 
-int process() {
-
+void process() {
     int calendar[13] = {29, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int d, m, y, res;
+    int d, m, y;
     scanf("%d %d %d", &d, &m, &y);
-
-    if ((d>=1 || d<=31) && (m>=1 || m<=12) && (y>=1950 || y<=2300)) {
-
+    if ((d>=1 && d<=31) && (m>=1 && m<=12) && (y>=1950 && y<=2300)) {
         if ((y%4 == 0 && y%100 != 0) || y%400 == 0) {
-                m = 0;
-            }
+            m = 0;
+        }
 
-            if (d <= calendar[m]) {
-                res = 1;
-            } else {
-                res = 0;
-            }
-
-            if (res == 1) {		
-                printf("YES\n");
-            } else if (res == 0) {		
-                printf("NO\n");
-            }
-    }
-
-
+        if (d <= calendar[m]) {
+            printf("YES\n");
+        } else {
+            printf("NO\n");
+        }
+    }    
 }
 
 int main() {
